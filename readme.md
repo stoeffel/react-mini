@@ -19,6 +19,7 @@ var mini = require('react-mini');
 
 
 module.exports = mini( (me, props) => <h1>Title: {props.title}</h1> );
+module.exports = mini( (me, props) => !props.hidden?<h1>Title: {props.title}</h1>:null );
 ```
 
 ### with props and state
