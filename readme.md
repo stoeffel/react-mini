@@ -25,7 +25,7 @@ module.exports = mini( (me, props) => <h1>Title: {props.title}</h1> );
 
 ```js
 
-var Counter = mini( (me, props = { step = 1 } , state) => { 
+var Counter = mini( (me, props = { step: 1 } , state) => { 
 	var incCounter = () => me.setState({ count : me.state.count + props.step });
 
   return <span>Counter: {state.count}<button onClick={incCounter}>+1</button></span> 
