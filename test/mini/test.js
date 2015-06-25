@@ -11,21 +11,25 @@ describe('React-Mini', function() {
 	});
 
   it('should render the props', function() {
-		var Hello = mini((me, props) => (
-			<h1>Hi {props.name}</h1>));
+		var Hello = mini((me, {greeting = 'Hi', name}) => (
+			<h1>{greeting} {name}</h1>));
 
 		var component = React.render( <Hello name='Stoeffel'/>, document.body);
 		var val = TestUtils.findRenderedDOMComponentWithTag(component, 'h1');
     assert.equal(val.getDOMNode().textContent, 'Hi Stoeffel');
+
+		var component2 = React.render( <Hello greeting='Hello' name='Stoeffel'/>, document.body);
+		var val = TestUtils.findRenderedDOMComponentWithTag(component2, 'h1');
+    assert.equal(val.getDOMNode().textContent, 'Hello Stoeffel');
 	});
 
   it('should update the state', function() {
-		var Counter = mini((me, props = { step : 3 } , state) => {
-			var incCounter = () => me.setState({ count : state.count + props.step });
+		var Counter = mini((me, { step = 3 } , {count}) => {
+			var incCounter = () => me.setState({ count : count + step });
 
 				return (
 					<div>
-					  Counter: <span>{state.count}</span>
+					  Counter: <span>{count}</span>
 						<button onClick={incCounter}>+1</button>
 					</div>);
 		}, { count: 10 })
