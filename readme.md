@@ -20,6 +20,7 @@ var mini = require('react-mini');
 
 module.exports = mini( (me, props) => <h1>Title: {props.title}</h1> );
 module.exports = mini( (me, { title }) => <h1>Title: {title}</h1> );
+module.exports = mini( ({props: { title }}) => <h1>Title: {title}</h1> );
 module.exports = mini( (me, { hidden = false, title }) => !hidden?<h1>Title: {title}</h1>:null );
 module.exports = mini( (me, { greet = 'Hi', name }) => <h1>{greet} {name}</h1> );
 ```
