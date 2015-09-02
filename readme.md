@@ -45,4 +45,4 @@ React.render(
 
 ## License
 
-MIT © [Christoph Hermann](http://schtoeffel.ch)
+MIT © [Christoph Hermann](stoeffel.github.io)
