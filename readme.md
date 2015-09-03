@@ -41,6 +41,17 @@ React.render(
 )
 ```
 
+## API
+
+`mini(render:Function(context, props, state, children), [initialState:Object])`
+
+* `render` : This is the actual render function.
+  * `context:Object` : The context of the component (`this`)
+  * `props:Object` : The props of the component
+  * `state:Object` : The current state of the component
+  * `children:Object` : The components children
+* `initialState` : The initial state of the component.
+
 
 
 ## License
