@@ -11,7 +11,7 @@ describe('React-Mini', function() {
 	});
 
   it('should render the props', function() {
-		var Hello = mini((me, {greeting = 'Hi', name}) => (
+		var Hello = mini(({greeting = 'Hi', name}) => (
 			<h1>{greeting} {name}</h1>));
 
 		var component = React.render( <Hello name='Stoeffel'/>, document.body);
@@ -24,8 +24,8 @@ describe('React-Mini', function() {
 	});
 
   it('should update the state', function() {
-		var Counter = mini((me, { step = 3 } , {count}) => {
-			var incCounter = () => me.setState({ count : count + step });
+		var Counter = mini(({ step = 3 }, { setState, state: {count} }) => {
+			var incCounter = () => setState({ count : count + step });
 
 				return (
 					<div>

@@ -7,7 +7,8 @@ module.exports = function mini(comp, initialState) {
 			return initialState || null;
 		},
 		render: function() {
-			return comp(this, this.props, this.state, this.props.children);
+			this.setState = this.setState.bind(this);
+			return comp(this.props, this);
 		}
 	});
 };
