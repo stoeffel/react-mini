@@ -60,8 +60,12 @@ React.render(
   * `component:Object` : The component (`this`)
 * `initialState` : The initial state of the component.
 
+## Related
 
+* [react-mini-this][rmt] - `function HelloWorld({name}) { return <h1> Hello {name} </h1>; }::pure();`
 
 ## License
 
 MIT © [Christoph Hermann](http://stoeffel.github.io)
+
+[rmt]: https://github.com/stoeffel/react-mini-this
