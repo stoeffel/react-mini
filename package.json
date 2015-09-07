@@ -17,7 +17,8 @@
     "test": "mocha --compilers js:babel/register --recursive"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "pure.js"
   ],
   "keywords": [
     "react",

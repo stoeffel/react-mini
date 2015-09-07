@@ -24,6 +24,17 @@ module.exports = mini( ({ hidden = false, title }) => !hidden?<h1>Title: {title}
 module.exports = mini( ({ greet = 'Hi', name }) => <h1>{greet} {name}</h1> );
 ```
 
+### Pure components
+
+Create pure components using [PureRenderMixin](https://facebook.github.io/react/docs/pure-render-mixin.html)
+
+```js
+var React = require('react');
+var pure = require('react-mini/pure');
+
+module.exports = pure( ({ title }) => <h1>Title: {title}</h1> );
+```
+
 ### with props and state
 
 ```js
