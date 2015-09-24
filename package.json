@@ -1,6 +1,6 @@
 {
   "name": "react-mini",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minimalistic react components",
   "license": "MIT",
   "repository": "stoeffel/react-mini",
@@ -36,8 +36,17 @@
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"],
-    "testFileExtensions": ["es6", "js"],
-    "moduleFileExtensions": ["js", "json", "es6"]
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ],
+    "testFileExtensions": [
+      "es6",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
+    ]
   }
 }
