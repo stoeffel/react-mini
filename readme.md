@@ -2,7 +2,7 @@
 
 > Create minimalistic react components
 
-For inline components or if you are really lazy.
+Allows you to create **thisless** react components. With react `>= 0.14` [stateless function components](http://facebook.github.io/react/blog/#stateless-function-components) are supported by react itself. But with `react-mini` you can create **statefull function components**.
 
 ## Install
 
@@ -35,10 +35,9 @@ var pure = require('react-mini/pure');
 module.exports = pure( ({ title }) => <h1>Title: {title}</h1> );
 ```
 
-### with props and state
+### with props and state *thisless*
 
 ```js
-
 var Counter = mini( ({ step = 1 } , { setState, state: { count } }) => { 
 	var incCounter = () => setState({ count : count + step });
 
