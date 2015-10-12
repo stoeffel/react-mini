@@ -1,9 +1,9 @@
 jest.dontMock('../');
 
-import React from 'react/addons';
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 import { equal } from 'assert';
 
-const { TestUtils } = React.addons;
 const mini = require('../');
 
 describe('React-Mini', () => {
@@ -13,11 +13,11 @@ describe('React-Mini', () => {
 
 		const component = TestUtils.renderIntoDocument( <Hello name='Stoeffel'/>);
 		const val = TestUtils.findRenderedDOMComponentWithTag(component, 'h1');
-    equal(val.getDOMNode().textContent, 'Hi Stoeffel');
+    equal(val.textContent, 'Hi Stoeffel');
 
 		const component2 = TestUtils.renderIntoDocument( <Hello greeting='Hello' name='Stoeffel'/>);
 		const val2 = TestUtils.findRenderedDOMComponentWithTag(component2, 'h1');
-    equal(val2.getDOMNode().textContent, 'Hello Stoeffel');
+    equal(val2.textContent, 'Hello Stoeffel');
 	});
 
   it('should update the state', () => {
@@ -35,8 +35,8 @@ describe('React-Mini', () => {
 		const countValue = TestUtils.findRenderedDOMComponentWithTag(component, 'span');
 		const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
 
-    equal(countValue.getDOMNode().textContent, '10');
+    equal(countValue.textContent, '10');
 		TestUtils.Simulate.click(button);
-		equal(countValue.getDOMNode().textContent, '20');
+		equal(countValue.textContent, '20');
 	});
 });
